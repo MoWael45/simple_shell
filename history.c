@@ -76,7 +76,7 @@ int read_history(info_t *info)
 	if (!fstat(fd, &st))
 		fsize = st.st_size;
 	if (fsize < 2)
-		return (0)
+		return (0);
 	buf = malloc(sizeof(char) * (fsize + 1));
 	if (!buf)
 		return (0);
@@ -95,7 +95,7 @@ int read_history(info_t *info)
 	if (last != i)
 		build_history_list(info, buf + last, linecount++);
 	free(buf);
-	nfo->histcount = linecount;
+	info->histcount = linecount;
 	while (info->histcount-- >= HIST_MAX)
 		delete_node_at_index(&(info->history), 0);
 	renumber_history(info);

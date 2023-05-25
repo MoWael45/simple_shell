@@ -62,7 +62,7 @@ void _puts(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_putchar(str[i])
+		_putchar(str[i]);
 			i++;
 	}
 }

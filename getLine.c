@@ -26,7 +26,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 #endif
 		if (r > 0)
 		{
-			((*buf)[r - 1] == '\n')
+			if ((*buf)[r - 1] == '\n')
 			{
 				(*buf)[r - 1] = '\0'; /* remove trailing newline */
 				r--;
